@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'Pokemon';
+    src: url('../public/fonts/Pokemon Solid.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }

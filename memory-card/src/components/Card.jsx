@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import fetchPokemonData from './fetchPokemonData.js';
-import './Card.css';
+import '../styles/Card.css';
 
 const pokemonArray = [
   { name: "Pikachu" },
@@ -19,20 +19,8 @@ const pokemonArray = [
   { name: "Vaporeon" },
   { name: "Flareon" },
   { name: "Jolteon" },
-  { name: "Articuno" },
-  { name: "Zapdos" },
-  { name: "Moltres" },
   { name: "Mew" },
   { name: "Charmander" },
-  { name: "Wartortle" },
-  { name: "Venusaur" },
-  { name: "Pidgeot" },
-  { name: "Arcanine" },
-  { name: "Alakazam" },
-  { name: "Machamp" },
-  { name: "Golem" },
-  { name: "Rapidash" },
-  { name: "Slowbro" }
 ];
 
 function shuffle(array) {
@@ -74,11 +62,13 @@ function Card({ handleScore }) {
   function handleClick(pokemon) {
     if (pokemonCardClicked.includes(pokemon.id)) {
       handleScore(false); // Game over, reset score
+      alert("Game Over");
       setPokemonCardClicked([]); // Reset the game
     } else {
       handleScore(true); // Increment score
       setPokemonCardClicked([...pokemonCardClicked, pokemon.id]);
       setPokemonData(prevData => shuffle([...prevData]));
+      // alert to handle winning game (score is the size of the array)
     }
   }
 

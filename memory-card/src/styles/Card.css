@@ -1,20 +1,26 @@
+@import './variables.css';
+
 .pokemon-container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
-  }
-  
-  .pokemon-card {
+}
+
+.pokemon-card {
     border: 1px solid #ccc;
     border-radius: 10px;
     padding: 10px;
     text-align: center;
     width: 150px;
     box-shadow: 2px 2px 12px rgba(0,0,0,0.1);
-  }
-  
-  .pokemon-card img {
-    width: 100px;
-    height: 100px;
-  }
+    /* Ensure consistent height if necessary */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pokemon-card img {
+    width: 75px;
+    height: 75px;
+}

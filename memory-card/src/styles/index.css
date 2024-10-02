@@ -1,11 +1,14 @@
+@import './variables.css';
+@import './fonts.css';
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Pokemon', system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: var(--background-color);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -14,11 +17,14 @@
 }
 
 body {
-  margin: 50px;
+  margin: 20px;
   display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  font-family: 'Pokemon', sans-serif;
+  height: 100%;
+  overflow-y: hidden;
 }
 
 h1 {

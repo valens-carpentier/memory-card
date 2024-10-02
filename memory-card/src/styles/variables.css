@@ -1,0 +1,15 @@
+:root {
+    --pokemon-red: #FF0000;
+    --pokemon-blue: #002B5B;
+    --pokemon-yellow: #FFD700;
+    --pokemon-green: #00A550;
+    --pokemon-gray: #A8A77A;
+    --pokemon-black: #2C2C2C;
+    
+    /* Additional variables if needed */
+    --primary-color: var(--pokemon-blue);
+    --secondary-color: var(--pokemon-yellow);
+    --accent-color: var(--pokemon-red);
+    --background-color: var(--pokemon-gray);
+    --text-color: var(--pokemon-black);
+  }

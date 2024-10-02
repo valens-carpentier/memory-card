@@ -1,0 +1,78 @@
+@import './variables.css';
+@import './fonts.css';
+
+#root {
+  max-width: 1280px;
+  margin: auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Pokemon', sans-serif; /* Ensure consistency */
+}
+
+.App-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* Align items to the ends */
+  align-items: center;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  background-color: var(--background-color);
+  border-bottom: 2px solid #ccc; /* Optional: Add a bottom border to separate the header */
+}
+
+.pokemon-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px; /* Add some space below the header */
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: 'Pokemon', sans-serif;
+}
+
+.header {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.button-primary {
+  background-color: var(--accent-color);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.button-primary:hover {
+  background-color: darken(var(--accent-color), 10%);
+}
+
+.footer {
+  background-color: var(--secondary-color);
+  color: var(--pokemon-black);
+}

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Card from './components/Card.jsx';
 import ScoreDisplay from './components/ScoreDisplay.jsx';
+import './styles/App.css'; // Make sure to import the App.css
 
 function App() {
   const [score, setScore] = useState(0);
@@ -22,9 +23,13 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Pokémon Gallery</h1>
-      <ScoreDisplay score={score} bestScore={bestScore} />
-      <Card handleScore={handleScore} />
+      <header className="App-header">
+        <h1>Pokémon Gallery</h1>
+        <ScoreDisplay score={score} bestScore={bestScore} />
+      </header>
+      <div className="pokemon-container">
+        <Card handleScore={handleScore} />
+      </div>
     </div>
   );
 }
