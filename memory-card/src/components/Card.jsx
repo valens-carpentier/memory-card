@@ -35,8 +35,27 @@ const pokemonArray = [
   { name: "Slowbro" }
 ];
 
-function Card() {
+function shuffle(array) {
+  let currentIndex = array.length;
+
+  // While there remain elements to shuffle...
+  while (currentIndex != 0) {
+
+    // Pick a remaining element...
+    let randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+
+  return array;
+}
+
+function Card({ handleScore }) {
   const [pokemonData, setPokemonData] = useState([]);
+  const [pokemonCardClicked, setPokemonCardClicked] = useState([]);
 
   useEffect(() => {
     const fetchAllPokemon = async () => {
@@ -52,10 +71,25 @@ function Card() {
     fetchAllPokemon();
   }, []);
 
+  function handleClick(pokemon) {
+    if (pokemonCardClicked.includes(pokemon.id)) {
+      handleScore(false); // Game over, reset score
+      setPokemonCardClicked([]); // Reset the game
+    } else {
+      handleScore(true); // Increment score
+      setPokemonCardClicked([...pokemonCardClicked, pokemon.id]);
+      setPokemonData(prevData => shuffle([...prevData]));
+    }
+  }
+
   return (
     <div className="pokemon-container">
       {pokemonData.map(pokemon => (
-        <div key={pokemon.id} className="pokemon-card">
+        <div 
+          key={pokemon.id} 
+          className="pokemon-card" 
+          onClick={() => handleClick(pokemon)}
+        >
           <h3>{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</h3>
           <img src={pokemon.sprites.front_default} alt={pokemon.name} />
         </div>
